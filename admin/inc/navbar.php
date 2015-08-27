@@ -24,6 +24,7 @@
             <li><a href="add_product.php">Add Product</a></li>
           </ul>
         </li>
+        <li><a href="banner.php">Banner</a></li>
       </ul>
     </div>
   </div>
