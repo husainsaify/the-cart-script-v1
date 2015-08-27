@@ -8,9 +8,9 @@
 		$id = escape($_GET['id']);
 
 		// check id is valid
-		$category = $db->Fetch("*","category", "id='$id'");
-		if (empty($category)) {
-			die("Invalid Category id");
+		$product = $db->Fetch("*","product", "id='$id'");
+		if (empty($product)) {
+			die("Invalid Product id");
 		}
 	}else{
 		die("Invalid Page");
@@ -29,9 +29,9 @@
 
 			// insert into the database
 			$image = $_FILES['image']['name'];
-			$insert = $db->Update("category","image='images/{$dir}/$image'","id='$id'");
+			$insert = $db->Update("product","image='images/{$dir}/$image'","id='$id'");
 			if ($insert) {
-				echo "<div class='alert alert-success'>Image Updated</div>";
+				echo "<div class='alert alert-success'>Image Updated <a href='edit_product.php?id={$id}'>Go Back</a></div>";
 			}else{
 				echo "<div class='alert alert-danger'>Failed to update file</div>";
 			}
@@ -41,7 +41,7 @@
 	}
 ?>
 
-<form action="edit_category_image.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
+<form action="edit_product_image.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<input type="file" name="image">
 	</div>

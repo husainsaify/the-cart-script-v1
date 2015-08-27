@@ -25,7 +25,8 @@
 				if (!empty($name)) {
 					$update = $db->Update("category", "name='$name'", "id='$id'");
 					if ($update) {
-						echo "<div class='alert alert-success'>Updated Successfull</div>";
+						echo "<div class='alert alert-success'>Updated Successfull <a href='category.php'>Go Back</a><</div>";
+						exit();
 					}else{
 						echo "<div class='alert alert-danger'>OOPS failed in updating name</div>";
 					}
