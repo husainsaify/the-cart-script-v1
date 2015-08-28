@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2015 at 09:04 PM
+-- Generation Time: Aug 28, 2015 at 12:07 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -111,10 +111,10 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `image`) VALUES
-(1, 'Ladies Garments 1', 'images/dress.jpg'),
+(1, 'Ladies Garments', 'images/dress.jpg'),
 (2, 'Mobile Phone', 'images/phone.jpg'),
 (3, 'Footwear', 'images/Shoe-Island-Tan-Ankle-Length-SDL054680536-1-1cfe3.jpg'),
-(4, 'laptops', 'images/d4ab877c380560df26370fb30abce1bb/mac-book-air.jpg');
+(4, 'laptops', 'images/mac-book-air.jpg');
 
 -- --------------------------------------------------------
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `offer` (
 INSERT INTO `offer` (`id`, `image`, `link`) VALUES
 (1, 'images/slider-1.jpg', '#'),
 (2, 'images/slider-2.jpg', '#'),
-(3, 'images/slider-3.jpg', '#');
+(3, 'images/b3740e87e3ea91f04aeff5232c4f857c/slider-3.jpg', 'http://google.comd');
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,7 @@ INSERT INTO `product` (`id`, `category_id`, `name`, `image`, `description`, `mp`
 (5, 2, 'Sony Xperia E1 Dual 4GB Black', 'images/experia.jpg', 'Sony Xperia E1 Dual smartphone is an ideal pick for music lovers and social media buffs. It features an excellent Sony Walkman that allows you to create multiple playlists and share them with your friends. This 3G enabled dual SIM smartphone has 4 inch TFT capacitive touchscreen that renders 16 million colours. You can click pictures with its 3 MP camera and save it in its 4 GB internal memory. Equipped with 1.2 GHz dual-core processor and Android 4.4 KitKat operating system, you can explore endless opportunities with this device in a hassle-free manner. It comes with 1750 mAh Li-Ion battery that provides up to 8 hours and 41 minutes of talk time. You can listen to music for over 35 hours 53 minutes on this device once it is fully charged. Buy Sony Xperia E1 Dual from Snapdeal.com at best possible price and get 1 year Sony India warranty on the product.', 10490, 5490, '48%', 50, 'mobile,sony,experai mobile'),
 (6, 2, 'iPhone 6 16 GB', 'images/phone.jpg', 'Apple iPhone 6 exudes elegance and excellence at its best. With iOS 8, the world’s most advanced mobile operating system, and a larger and superior 4.7 inches high definition Retina display screen, this device surpasses any expectations you might have with a mobile phone. Apple iPhone 6 includes a revolutionary NFC Apply Pay Wallet which functions like a credit card. You can shop in the stores or buy stuff online in a secure, private and easy way with a single touch on your iPhone 6 using Apple Pay Wallet.', 56000, 42999, '23%', 0, 'apple iphone,iphone mobile'),
 (7, 3, 'Shoe Island Tan Ankle Length Shoes', 'images/Shoe-Island-Tan-Ankle-Length-SDL054680536-1-1cfe3.jpg', 'Simple and minimal design combining with comfort and falling in line with your demand for the latest in fashion, Shoe Island presents an amazing range of footwear for men who want to look perfect for every occasion. This range is suave, fashionable and comfortable. Stylish and classy are the words that define this collection perfectly. Each style reflects passion for footwear and deep understanding of materials and design.', 699, 498, '29%', 0, 'shoes,footware'),
-(9, 3, 'mochi shoes', 'images/9a3a4d70277e7b7cbdf2759cf1e803b6/Mochi-G-Black-Canvas-Shoes-SDL589064503-1-532e1.jpg', 'mochi shoes', 1500, 1000, '25%', 10, 'mochi shoes,footwear,shoes');
+(8, 3, 'mochi shoes', 'images/a5361c1e0bf1eb360dbdfa760524cb67/footware.jpeg', 'mochi shoes hhhhhhhhh', 1500, 1000, '25%', 10, 'mochi shoes,footwear,shoes');
 
 -- --------------------------------------------------------
 

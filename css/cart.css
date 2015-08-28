@@ -125,3 +125,12 @@ body{
 .tile-container > h3{
 	margin:5px;
 }
+/*order*/
+.order-container{
+	height: auto;
+	min-height: 200px;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 10px 5px;
+}

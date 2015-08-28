@@ -29,6 +29,7 @@
 				$unset = count($product_id_stack) - 1;
 				// unset the last empty item from the product_id_stack
 				unset($product_id_stack[$unset]);
+				$status_progressbar = "";
 				// format status code
 				switch ($buy['status_code']) {
 					case '1':
