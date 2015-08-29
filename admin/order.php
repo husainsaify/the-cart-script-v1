@@ -1,75 +1,62 @@
 <?php
-  require_once("inc/header.php");
-  require_once("inc/navbar.php");
-  // check admin is logged in or not
-  not_login($_SESSION['admin_id'], "login.php");
+	require_once("inc/header.php");
+	require_once("inc/navbar.php");
+	require_once("../classes/Upload.php");
+	// if admin is not login send him to login.php
+	not_login($_SESSION['admin_id'], "login.php");
+
+	//check that the order type is in the $_GET
+	$allowed_type = array("1","2","3","4","5","6");
+	if (isset($_GET['status']) && in_array($_GET['status'], $allowed_type)) {
+		$status_no = escape($_GET['status']);
+		// set the status_name
+		switch ($status_no) {
+			case '1':
+				$status_name = "Processing";
+				break;
+			case "2":
+				$status_name = "Processed";
+				break;
+			case "3":
+				$status_name = "Shipped";
+				break;
+			case "4":
+				$status_name = "Deliverd";
+				break;
+			case "5":
+				$status_name = "Canceled";
+				break;
+			case '6':
+				$status_name = "Returned";
+				break;
+		}
+	}else{
+		echo "<h1 class='text-center text-bs-primary text-upper'>Invalid Url</h1>";
+		exit();
+	}
 ?>
 <div class="container padding-10">
-  <div id="search-container">
-      <h1 class="text-center text-upper text-bs-primary">Welcome <?php echo $_SESSION['admin_username']; ?></h1>
-      <?php
-        // count user,orders,products category etc
-      $user_count = $db->GetNum("user",null);
-      $order_count = $db->GetNum("buy", null);
-      $product_count = $db->GetNum('product', null);
-      $category_count = $db->GetNum("category", null);
-      ?>
-      <!-- information tile -->
-      <div class="row">
-      <!-- USER COUNT -->
-        <div class="col-sm-3">
-          <a href="users.php" class="a">
-          <div class="tile-container bg-red">
-            <i class='fa fa-users icon-medium'></i>
-            <p><?php echo $user_count; ?></p>
-            <h3>Users</h3>
-          </div>
-          </a>
-        </div>
-        <!-- / USER COUNT -->
-
-        <!-- ORDER COUNT -->
-        <div class="col-sm-3">
-        <a href="order.php?status=1" class="a">
-          <div class="tile-container bg-green">
-            <i class='fa fa-money icon-medium'></i>
-            <p><?php echo $order_count; ?></p>
-            <h3>Orders</h3>
-          </div>
-          </a>
-        </div>
-        <!-- / ORDER COUNT -->
-
-        <!-- CATEGORY COUNT -->
-        <div class="col-sm-3">
-          <a href="category.php" class="a">
-          <div class="tile-container bg-orange">
-            <i class='fa fa-files-o icon-medium'></i>
-            <p><?php echo $category_count; ?></p>
-            <h3>Category</h3>
-          </div>
-          </a>
-        </div>
-        <!-- / CATEGORY COUNT -->
-
-        <!-- PRODUCT COUNT -->
-        <div class="col-sm-3">
-          <a href="product.php" class="a">
-          <div class="tile-container bg-blue">
-            <i class='fa fa-black-tie icon-medium'></i>
-            <p><?php echo $product_count; ?></p>
-            <h3>Products</h3>
-          </div>
-          </a>
-        </div>
-        <!-- / PRODUCT COUNT -->
-      </div>
-      <!-- / information tile -->
-
-      <h1 class="text-center text-upper text-bs-primary">new orders</h1>
-      <?php
-        // fetch all the new orders
-        $orders = $db->FetchAll("*","buy","status_code='1'","id='ASC'");
+	<div id="search-container">
+	<center>
+	<div class="btn-group">
+		<a href="order.php?status=1" class="btn btn-primary">Processing Orders</a>
+		<a href="order.php?status=2" class="btn btn-primary">Processed Orders</a>
+		<a href="order.php?status=3" class="btn btn-primary">Shipped Orders</a>
+		<a href="order.php?status=4" class="btn btn-primary">Deliverd Orders</a>
+		<a href="order.php?status=5" class="btn btn-primary">Canceled Orders</a>
+		<a href="order.php?status=6" class="btn btn-primary">Returned Orders</a>
+	</div>
+	</center>
+		<h1 class="text-center text-bs-primary text-upper"><?php echo $status_name ?> orders</h1>
+		<?php
+			// fetch all the new orders
+        $orders = $db->FetchAll("*","buy","status_code='$status_no'","id='ASC'");
+        // show if their is no orders
+        if (empty($orders)) {
+        	echo "<h3 class='text-center text-upper'>No Orders</h3>";
+        	exit();
+        }
+        // show if their is orders
         foreach ($orders as $key => $order) {
           echo "<div class='order-container'><div class='table-responsive'>"; //product order container
           echo "<table class='table table-condensed'>"; //table
@@ -138,9 +125,8 @@
           echo "</table>
           </div></div>"; //close poduct order container
         }
-      ?>
-  </div>
+		?>
+	</div>
+	<?php require_once("../inc/footer-nav.php"); ?>
 </div>
-<?php
-  require_once("inc/footer.php");
-?>
+<?php require_once("inc/footer.php"); ?>

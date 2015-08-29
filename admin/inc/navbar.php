@@ -11,6 +11,7 @@
     <div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+      <li><a href="order.php?status=1">Order</a></li>
         <li><a href="users.php">Users</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="category.php">Category <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -25,6 +26,10 @@
           </ul>
         </li>
         <li><a href="banner.php">Banner</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="change_credentials.php">Account Setting</a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </div>
   </div>

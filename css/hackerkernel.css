@@ -94,7 +94,11 @@ label{cursor: pointer;}
 .width-200px{width: 200px;}
 .widht-250px{width: 250px;}
 .widht-300px{width: 300px;}
+.width-350px{width: 350px;}
+.width-400px{width: 400px;}
 /*border*/
 .border-eee{border:1px solid #eee;}
 .border-ccc{border:1px solid #ccc;}
 .border-000{border:1px solid #000;}
+
+.center{margin:0px auto;}

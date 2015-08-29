@@ -5,6 +5,7 @@
 	/*$_GET['search'] is available*/
 	if (!isset($_SESSION['id'])) {
 		echo "<h1 class='text-center text-upper text-bs-primary'>Please Login <a href='login.php' class='text-black'>Login</a></h1>";
+		exit();
 	}
 	$user_id = $_SESSION['id'];
 ?>
@@ -30,32 +31,33 @@
 				// unset the last empty item from the product_id_stack
 				unset($product_id_stack[$unset]);
 				$status_progressbar = "";
+
 				// format status code
 				switch ($buy['status_code']) {
-					case '1':
+					case "1":
 						$status_per = "0%";
 						$status_text = "Deliverd";
 						break;
-					case '2':
+					case "2":
 						$status_per = "33.33%";
 						$status_text = "Deliverd";
 						break;
-					case '3':
+					case "3":
 						$status_per = "66%";
 						$status_text = "Deliverd";
 						break;
-					case '4':
+					case "4":
 						$status_per = "100%";
 						$status_text = "Deliverd";
 						break;
-					case '5':
+					case "5":
 						$status_per = "100%";
 						$status_text = "Canceled";
 						$status_progressbar = "progress-bar-danger";
 						break;
 					case "6":
 						$status_per = "100%";
-						$status_text = "Returend";
+						$status_text = "Returned";
 						$status_progressbar = "progress-bar-danger";
 						break;
 				}
@@ -63,7 +65,7 @@
 				<div class="border-ccc padding-10 order-container">
 					<strong>Order Id:</strong> <?php echo $buy['id'] ?><br>
 					<strong>Placed:</strong> <?php echo time_ago($buy['booked_time']); ?>
-					<a href="#" class="float-right">Cancel order</a>
+					<a href="cancel_order.php?id=<?php echo $buy['id']; ?>" class="float-right">Cancel order</a>
 					<hr/>
 					<table style="width:100%;">
 					<th>Image</th>

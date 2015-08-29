@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2015 at 12:07 PM
+-- Generation Time: Aug 29, 2015 at 08:28 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.24
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'test', '098f6bcd4621d373cade4e832627b4f6');
+(1, 'husain', '098f6bcd4621d373cade4e832627b4f6');
 
 -- --------------------------------------------------------
 
@@ -66,9 +66,9 @@ CREATE TABLE IF NOT EXISTS `buy` (
 --
 
 INSERT INTO `buy` (`id`, `user_id`, `name`, `email`, `mobile`, `city`, `pincode`, `address`, `booked_time`, `dispatch_time`, `status`, `status_code`, `product_stack`) VALUES
-(1, 3, 'husain saify', 'test@test.com', '8962239913', 'hopal', 462001, '2 lakherapura', 1440270414, 0, 'Processing', 1, '2,8,'),
-(2, 1, 'huzefa', 'test@test.com', '8962239913', 'bhopal', 462001, '2222222222222', 1440309592, 0, 'Processing', 1, '6,'),
-(3, 3, 'ali', 'ali@ali.com', '8962239913', 'bhopal', 462001, '2 lakhera', 1440314708, 0, 'Processing', 1, '4,');
+(1, 3, 'husain saify', 'test@test.com', '8962239913', 'hopal', 462001, '2 lakherapura', 1440270414, 0, 'Shipped', 3, '2,8,'),
+(2, 1, 'huzefa', 'test@test.com', '8962239913', 'bhopal', 462001, '2222222222222', 1440309592, 1440788885, 'Deliverd', 4, '6,'),
+(3, 3, 'ali', 'ali@ali.com', '8962239913', 'bhopal', 462001, '2 lakhera', 1440314708, 0, 'Canceled', 5, '4,');
 
 -- --------------------------------------------------------
 
@@ -104,17 +104,18 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `image`) VALUES
-(1, 'Ladies Garments', 'images/dress.jpg'),
+(1, 'Ladies Garments 1', 'images/dress.jpg'),
 (2, 'Mobile Phone', 'images/phone.jpg'),
 (3, 'Footwear', 'images/Shoe-Island-Tan-Ankle-Length-SDL054680536-1-1cfe3.jpg'),
-(4, 'laptops', 'images/mac-book-air.jpg');
+(4, 'laptops', 'images/mac-book-air.jpg'),
+(5, 'shoes', 'images/8861c02d0191bcfab6edfe310326d498/815a7Z-t0pL._SL1500_.jpg');
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `offer` (
 --
 
 INSERT INTO `offer` (`id`, `image`, `link`) VALUES
-(1, 'images/slider-1.jpg', '#'),
+(1, 'images/slider-1.jpg', 'http://localhost/blog/cartv1/product.php?id=1'),
 (2, 'images/slider-2.jpg', '#'),
 (3, 'images/b3740e87e3ea91f04aeff5232c4f857c/slider-3.jpg', 'http://google.comd');
 
@@ -154,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `off` varchar(4) NOT NULL,
   `shipping` int(11) NOT NULL,
   `tags` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
@@ -262,7 +263,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `offer`
 --
@@ -272,7 +273,7 @@ ALTER TABLE `offer`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `user`
 --
