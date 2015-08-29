@@ -44,7 +44,7 @@
 				<?php	
 
 				/*fetch all the product realted to this category*/
-				$products = $db->FetchAll("*","Product","category_id='$category_id'","`id` DESC");
+				$products = $db->FetchAll("*","product","category_id='$category_id'","`id` DESC");
 
 				/*check there is more then 1 product of this category*/
 				$product_num = $db->GetNum("product","category_id='$category_id'");
