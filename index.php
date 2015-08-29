@@ -14,7 +14,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
 
-        <div class="item active">
+        <div class="item active height-400px">
           <img class="first-slide" class="hk-feature-slider-img" src="<?php echo $offer[0]['image']; ?>" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <div class="item">
+        <div class="item height-400px">
           <img class="second-slide" class="hk-feature-slider-img" src="<?php echo $offer[1]['image']; ?>" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div class="item">
+        <div class="item height-400px">
           <img class="third-slide" src="<?php echo $offer[2]['image']; ?>">
           <div class="container">
             <div class="carousel-caption">

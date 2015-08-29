@@ -26,13 +26,12 @@
 				$isEmptyArray = array();
 				foreach ($_POST as $key => $post) {
 					$post = trim($post);
-					if (empty($post)) {
+					if ($post == "") {
 						$isEmptyArray[$key] = "isEmpty";
 					}else{
 						$isEmptyArray[$key] = "notEmpty";
 					}
-				}
-				
+				}				
 				// check array has the isEmpty keyword
 				if (in_array("isEmpty", $isEmptyArray)) {
 					echo "<div class='alert alert-danger'>Fill in all the fields</div>";
@@ -54,9 +53,10 @@
 							$insert = $db->Insert("product", "'','$category','$name','images/{$dir}/$image','$desc','$mp','$sp','$off','$shipping','$tags'");
 
 							if($insert){
-								echo "<div class='alert alert-success'>Product has been added</div>";
+								echo "<div class='alert alert-success'>Product has been added <a href='product.php'>GO BACK</a></div>";
+								exit();
 							}else{
-
+								echo "<div class='alert alert-danger'>Unable to Insert Product Try again</div>";
 							}
 						}else{
 							echo "<div class='alert alert-danger'>{$result['message']}</div>";
@@ -84,11 +84,11 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<label for="pmp">Market Price</label>
-						<input type="text" name="pmp" id="pmp" class="form-control" placeholder="Ex: 45000 (NOTE:no rs)" value="<?php echo @$mp; ?>">
+						<input type="number" name="pmp" id="pmp" class="form-control" placeholder="Ex: 45000 (NOTE:no rs)" value="<?php echo @$mp; ?>">
 					</div>
 					<div class="col-sm-3">
 						<label for="psp">Selling Price</label>
-						<input type="text" name="psp" id="psp" class="form-control" placeholder="Ex: 40000 (NOTE:no rs)" value="<?php echo @$sp; ?>">
+						<input type="number" name="psp" id="psp" class="form-control" placeholder="Ex: 40000 (NOTE:no rs)" value="<?php echo @$sp; ?>">
 					</div>
 					<div class="col-sm-3">
 						<label for="poff">Discount Percentage</label>
@@ -96,7 +96,7 @@
 					</div>
 					<div class="col-sm-3">
 						<label for="pshipping">Shipping Charges</label>
-						<input type="text" name="pshipping" id="pshipping" class="form-control" placeholder="Ex	: 40 (NOTE:no rs)" value="<?php echo @$shipping; ?>">
+						<input type="number" name="pshipping" id="pshipping" class="form-control" placeholder="Ex	: 40 (NOTE:no rs)" value="<?php echo @$shipping; ?>">
 					</div>
 				</div>
 			</div>

@@ -61,14 +61,6 @@ CREATE TABLE IF NOT EXISTS `buy` (
   `product_stack` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `buy`
---
-
-INSERT INTO `buy` (`id`, `user_id`, `name`, `email`, `mobile`, `city`, `pincode`, `address`, `booked_time`, `dispatch_time`, `status`, `status_code`, `product_stack`) VALUES
-(1, 1, 'husain saify', 'hsnsaify22@gmail.com', '8962239913', 'bhopal', 462001, '2 lakherapura bho[', 1440837817, 0, 'Shipped', 3, '7,');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `cart`
@@ -82,12 +74,6 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `buy_id` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `product_id`, `user_id`, `active`, `buy_id`) VALUES
-(1, 7, 1, 'n', '1');
 
 -- --------------------------------------------------------
 
@@ -101,15 +87,6 @@ CREATE TABLE IF NOT EXISTS `category` (
   `image` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`id`, `name`, `image`) VALUES
-(1, 'Mobile Phone', 'images/c71ebc0f910bcd807a3d3454d89e61f4/phone1.jpg'),
-(2, 'Laptops', 'images/62f15fdd0cedbae7914d783e0945f25f/asus-n76.jpg'),
-(3, 'Footwear', 'images/2bc03581595400210f9f7d2a3ba37af3/footware.jpeg'),
-(5, 'Dresses', 'images/c791e95aafaf865ec7dcc764e0d75c99/dress2.jpg');
 
 -- --------------------------------------------------------
 
@@ -151,24 +128,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `tags` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `product`
---
 
-INSERT INTO `product` (`id`, `category_id`, `name`, `image`, `description`, `mp`, `sp`, `off`, `shipping`, `tags`) VALUES
-(1, 5, 'Black Dress', 'images/11626a29f667dc270c7e8176c7b9d8f4/dress2.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales dignissim cursus. Etiam nisl lorem, mattis semper luctus at, tincidunt quis mauris. Aliquam aliquet urna sed malesuada rutrum. Cras luctus purus massa, vel tristique purus varius ac. Maecenas tristique tempus quam et tincidunt. Nunc quis scelerisque nisi, et volutpat ante. Phasellus semper ante sit amet lectus facilisis pretium. Maecenas sit amet lorem vel tortor vulputate elementum in sed mi. Etiam fermentum semper ante, at volutpat dui vestibulum in. Morbi tristique, mauris et tempus pretium, lacus eros tempus ipsum, eget maximus sem turpis id ligula. Aenean lacus erat, aliquam ut quam id, semper convallis nunc.', 1500, 1000, '15%', 10, 'black,dress,ladie dress,ladies graments,garments'),
-(2, 5, 'Red Dress', 'images/654d6ddb9b4471aa12fdb36235644980/dress.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales dignissim cursus. Etiam nisl lorem, mattis semper luctus at, tincidunt quis mauris. Aliquam aliquet urna sed malesuada rutrum. Cras luctus purus massa, vel tristique purus varius ac. Maecenas tristique tempus quam et tincidunt. Nunc quis scelerisque nisi, et volutpat ante. Phasellus semper ante sit amet lectus facilisis pretium. Mae', 1000, 500, '50%', 40, 'black,dress,ladie dress,ladies graments,garments'),
-(3, 1, 'Sony Experia', 'images/37ceeba595f587255002afaaa13a3820/experia.jpg', 'black,dress,ladie dress,ladies graments,garments', 7000, 6000, '20%', 50, 'phone,sony,expria,e1'),
-(4, 1, 'Iphone 6s', 'images/8b508afcaeed10fbf24cc2866b4bed4d/phone.jpg', 'Aliquam gravida purus in eleifend semper. Vestibulum placerat nisl quis euismod sodales. Sed consequat congue leo, ut lobortis nibh pellentesque sit amet. Aliquam feugiat auctor dapibus. Nulla tempor eget ante ut hendrerit. Nulla pharetra nunc at quam imperdiet, ac vulputate massa dignissim. Morbi arcu se', 80000, 5000, '95%', 5000, 'iphone,phone,apple'),
-(5, 2, 'Asus Laptop', 'images/5f6e5aeaff6de280657ea614d23c506f/asus-n76.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales dignissim cursus. Etiam nisl lorem, mattis semper luctus at, tincidunt quis mauris. Aliquam aliquet urna sed malesuada rutrum. Cras luctus purus massa, vel tristique purus varius ac. Maecenas tristique tempus quam et tincidunt. Nunc quis scelerisque nisi, et volutpat ante. Phasellus semper ante sit amet lectus facilisis pretium. Maecenas sit amet lorem vel tortor', 50000, 45000, '50%', 42, 'laptops,asus,'),
-(6, 2, 'macbook air', 'images/01ae3f7f2ca9b0b08709821bfa669b4f/mac-book-air.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales dignissim cursus. Etiam nisl lorem, mattis semper luctus at, tincidunt quis mauris. Aliquam aliquet urna sed malesuada rutrum. Cras luctus purus massa, vel tristique purus varius ac. Maecenas tristique tempus quam et tincidunt. Nunc quis scelerisque nisi, et volutpat ante. Phasellus semper ante sit amet lectus facilisis pretium. Maecenas sit amet lorem vel tortor', 555555, 444444, '50%', 15, 'mac book air,macbook pro,iphone,apple'),
-(7, 3, 'Mochi shoes', 'images/cd6abad0c7ff0a53082ab4bcd7f31f92/Shoe-Island-Tan-Ankle-Length-SDL054680536-1-1cfe3.jpg', 'mochi shoes', 1000, 999, '1%`', 0, 'shoes,footwear,gender,men');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL,
@@ -181,9 +141,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 -- Dumping data for table `user`
 --
-
-INSERT INTO `user` (`id`, `fullname`, `email`, `phone`, `password`) VALUES
-(1, 'test', 'test@test.com', '8962239913', '098f6bcd4621d373cade4e832627b4f6');
 
 --
 -- Indexes for dumped tables

@@ -37,7 +37,7 @@
 				$tags = escape($_POST['ptags']);
 				$category = escape($_POST['pcategory']);
 				
-				if (empty($name) || empty($desc) || empty($mp) || empty($sp) || empty($off) || empty($shipping) || empty($tags) || empty($category)) {
+				if (empty($name) || empty($desc) || empty($mp) || empty($sp) || empty($off) || $shipping == "" || empty($tags) || empty($category)) {
 					// show error message
 					echo "<div class='alert alert-danger'>Fill in all the fields.</div>";
 				}else{
