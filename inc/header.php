@@ -16,9 +16,8 @@
     <link rel="icon" href="data/favicon.ico">
 
 	<title>Cart Script V 1.0 - HackerKernel.com</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	 --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
  	<link rel="stylesheet" type="text/css" href="css/hackerkernel.css">
 	<link rel="stylesheet" type="text/css" href="css/cart.css">
 </head>
